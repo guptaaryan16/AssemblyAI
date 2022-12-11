@@ -62,6 +62,14 @@ async def clear(ctx,amount=5):
     await ctx.channel.purge(limit=amount)
 
 
+@client.command()
+async def Help(ctx):
+    em= discord.Embed(title= "Help", description = "Use the prefix ! to make use of the following commands", color= ctx.author.color)
+    em.add_field(name="join",value="Bot joins the voice channel ")   
+    em.add_field(name="rec",value="Checks whether recording has started")
+    em.add_field(name="stop",value="Bot stops the recording")
+    await ctx.send(embed=em)
+
 TOKEN=""    
     
 client.run(TOKEN)
