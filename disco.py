@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands,tasks
 from discord.ext.audiorec import NativeVoiceClient
 import random
+import requests
+import os
 
 client=commands.Bot(command_prefix='!',intents=discord.Intents.all())
 
@@ -38,7 +40,40 @@ async def stop(ctx: commands.Context):
     with open(f'{name}.wav', 'wb') as f:
         f.write(wav_bytes)
     await ctx.voice_client.disconnect()
-        
+
+@client.command()
+async def getdata(ctx: commands.Context):
+
+    filename=f'/AssemblyAI/{name}.wav'
+    def read_file(filename, chunk_size=5242880):
+        with open(filename, 'rb') as _file:
+         while True:
+            data = _file.read(chunk_size)
+            if not data:
+                break
+            yield data
+
+    headers = {"authorization": "8a248c77acb64559a8c349024653d8e2"}
+    async def f():
+        response = requests.post('https://api.assemblyai.com/v2/upload',
+                        headers=headers,
+                        data=read_file(filename))
+        return response
+    response=await f()
+    response=response.json()
+    k=response['id']
+    p="https://api.assemblyai.com/v2/transcript"
+    endpoint1 = "https://api.assemblyai.com/v2/transcript/%22+k
+    headers1 = {
+    "authorization": "8a248c77acb64559a8c349024653d8e2",
+}
+    async def data():
+        response1 = requests.get(endpoint1, headers=headers1)
+        response1=response1.json()
+        await ctx.send(response1['text'])
+    await data()
+
+
 @client.command()
 async def leave(ctx):
     voice=discord.utils.get(client.voice_clients,guild=ctx.guild)
