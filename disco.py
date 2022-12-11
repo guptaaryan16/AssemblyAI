@@ -53,7 +53,7 @@ async def getdata(ctx: commands.Context):
                 break
             yield data
 
-    headers = {"authorization": "8a248c77acb64559a8c349024653d8e2"}
+    headers = {"authorization": "<aip-key>"}
     async def f():
         response = requests.post('https://api.assemblyai.com/v2/upload',
                         headers=headers,
