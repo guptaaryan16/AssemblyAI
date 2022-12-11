@@ -63,7 +63,7 @@ async def getdata(ctx: commands.Context):
     response=response.json()
     k=response['id']
     p="https://api.assemblyai.com/v2/transcript"
-    endpoint1 = "https://api.assemblyai.com/v2/transcript/%22+k
+    endpoint1 = "https://api.assemblyai.com/v2/transcript/%22+k"
     headers1 = {
     "authorization": "8a248c77acb64559a8c349024653d8e2",
 }
