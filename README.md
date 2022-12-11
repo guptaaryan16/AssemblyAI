@@ -3,7 +3,7 @@
 
 ![image](https://user-images.githubusercontent.com/96530048/206926379-c7a675af-550e-497c-b04e-19c5c3597b8b.png)
 
-## Submission for AssemblyAI Hackathon
+## [Submission for AssemblyAI Hackathon](https://discordapp.com/channels/1051074348242436096/1051074348712206389/1051602242135916624)
 Link to Video Demo: https://youtu.be/0Sza5DYxUbM
 
 Here we present our Discord Bot "Assembly-Meeting Bot"
