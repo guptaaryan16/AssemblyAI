@@ -1,5 +1,8 @@
-# ASSEMBLY-MEETING-BOT
 
+<p align="center">
+// # ASSEMBLY-MEETING-BOT
+
+</p>
 ## Submission for AssemblyAI Hackathon
 Link to Video Demo: 
 
