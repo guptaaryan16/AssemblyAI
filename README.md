@@ -3,4 +3,7 @@
 ## Submission for AssemblyAI Hackathon
 Link to Video Demo: 
 
-Here we present our Discord Bot 
+Here we present our Discord Bot .......
+
+### Overview
+
